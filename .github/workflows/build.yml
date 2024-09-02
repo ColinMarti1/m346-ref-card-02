@@ -1,2 +1,24 @@
-npm install
-npm run build
+name: Build
+
+# Workflow wird ausgeführt, wenn auf den main-Branch gepusht wird
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Check-out des Repositorys
+      - name: Check out repository
+        uses: actions/checkout@v3
+
+      # Abhängigkeiten installieren
+      - name: Install dependencies
+        run: npm install  # Passe den Befehl an dein Build-Tool an
+
+      # Projekt builden
+      - name: Build project
+        run: npm run build  # Passe den Befehl an dein Build-Tool an
