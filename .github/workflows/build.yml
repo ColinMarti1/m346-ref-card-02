@@ -22,3 +22,6 @@ jobs:
       # Projekt builden
       - name: Build project
         run: npm run build  # Passe den Befehl an dein Build-Tool an
+      # Inhalt des Build-Verzeichnisses auflisten
+      - name: List build directory contents
+        run: ls -la build
